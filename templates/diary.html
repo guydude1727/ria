@@ -1,11 +1,34 @@
-<header><span>Edit</span>Diary</header>
-calories left {{ 1200 }}
-<progress>75%</progress>
-<button>Add</button>
-<h5>Breakfast</h5>
-<ul> 
-	<li>{{eggs}}</li>
-</ul>
-<h5>Lucnh</h5>
+<header>
+	<span>Edit</span>
+	<h1>Daily Food Diary</h1>
+</header>
 
-<h5>Dinner</h5>
+<div class="date">
+	<div class="leftArrow"></div>
+	<div class="today">Thur. Oct. 31, 2013</div>
+	<div class="rightArrow"></div>
+</div>
+
+<div>
+	<div>Calories left:</div><div>{{ 1200 }}</div>
+	<progress>75%</progress>
+</div>
+
+<div class="infoBar">
+	<div>Food Item</div>
+	<div>Servings</div>
+	<div>Calories</div>
+</div>
+
+<div class="mealList">
+	<div>
+		<h5>{{Breakfast,Lunch,Dinner,Snacks}}</h5>
+		<span>Add</span>
+	</div>
+	<div class="foodList">
+		<div><img src="delete.png" alt="delete food item"></div>
+		<div>{{Banana}}</div>
+		<div><a>1</a></div>
+		<div>125</div>
+	</div>
+</div>
