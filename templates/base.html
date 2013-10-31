@@ -6,15 +6,22 @@
 
 		<!-- Add Script and CSS here you fools! DO IT NAOW! -->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/handlebars.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/templateController.js"></script>
 			
 	</head>
 
 	<body>
-		<div>
-			
-
+		
+		<div ng-controller="templateController" >
+			<span ng-model="template">
+			  URL of the template: <tt>{{template.url}}</tt>
+			  <hr />
+			  <span class="exmaple-animate-container" ng-include="template.url"
+			</span>
+		</div>
 
 
 			<nav>
