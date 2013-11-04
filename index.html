@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>Health App</title>
+
+		<!-- Add Script and CSS here you fools! DO IT NAOW! -->		
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/templateController.js"></script>
+		
+		<!--CSS FILES HERE FOOLS!-->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="css/animations.css"/>			
+	</head>
+
+	<body>
+		
+		<div ng-controller="templateController" >
+			<select ng-model="template" ng-options="t.name for t in templates">
+				<option value="">(blank)</option>
+			</select>
+			url of the template: <tr>{{template.url}}</tr>
+			<div class="example-animate-container">
+				<div class="include-example" ng-include="template.url"></div>			
+			</div>
+		</div>
+
+
+			<nav>
+				<p>
+					<a href="#">Diary</a>
+				</p>
+				<p>
+					<a href="#">Nutrition</a>
+				</p> 
+				<p>
+					<a href="#">Settings</a>
+				</p>
+			</nav>
+		</div>
+	</body>
+</html>
