@@ -5,6 +5,7 @@ function templateController($scope) {
 		, { name: 'add.html', url: 'templates/add.html'}
 		, { name: 'nutrition.html', url: 'templates/nutrition.html'}
 		, { name: 'recent.html', url: 'templates/recent.html'}
-		, { name: 'scan.html', url: 'templates/scan.html'} ];
+		, { name: 'scan.html', url: 'templates/scan.html'}
+		, { name: 'settings.html', url: 'templates/settings.html'}];
 	$scope.template = $scope.templates[0];
 }
