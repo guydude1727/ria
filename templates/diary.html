@@ -1,53 +1,48 @@
-<header>	
-	<button>Edit</button>
+<header class="row">	
+	<button class="col-md-2">Edit</button>
 	<h1>Daily Food Diary</h1>
 </header>
 	
-
-
-
-<div class="date">
-	<div class="leftArrow"></div>
-	<div class="today">Thur. Oct. 31, 2013</div>
-	<div class="rightArrow"></div>
+<div class="date row">
+	<div class="leftArrow col-md-1"></div>
+	<div class="today col-md-10">Thur. Oct. 31, 2013</div>
+	<div class="rightArrow col-md-1"></div>
 </div>
 
 <div>
-	<div>Calories left:</div><div>{{ 1200 }}</div>
-	<progress>75%</progress>
+	<div class="row">
+		<div class="col-md-8">Calories left:</div><div class="col-md-4">{{ 1200 }}</div>
+	</div>
+	<progress class="row">75%</progress>
 </div>
 
-<div class="infoBar">
-	<div>Food Item</div>
-	<div>Servings</div>
-	<div>Calories</div>
+<div class="infoBar row">
+	<div class="col-md-6">Food Item</div>
+	<div class="col-md-3">Servings</div>
+	<div class="col-md-3">Calories</div>
 </div>
 
-<div class="mealList">
-	<div>
-		<h5>Breakfast</h5>
-		<button>Add</button>
+<article>
+	<div class="row">
+		<h5 class="col-md-10">Breakfast</h5>
+		<button class="col-md-2">Add</button>
 	</div>
-	
-	<div>
-		<h5>Lunch</h5>
-		<button>Add</button>
+	<div class="foodList row">
+		<div class="col-md-1"><img src="img/delete.png" alt="delete food item"></div>
+		<div class="col-md-5">Banana</div>
+		<div class="col-md-3"><a>1</a></div>
+		<div class="col-md-3">125</div>
 	</div>
-	
-	<div>
-		<h5>Dinner</h5>
-		<button>Add</button>
+</article>
+<article>
+	<div class="row">
+		<h5 class="col-md-10">Lunch</h5>
+		<button class="col-md-2">Add</button>
 	</div>
-	
-	<div>
-		<h5>Snacks</h5>
-		<button>Add</button>
+</article>
+<article>
+	<div class="row">
+		<h5 class="col-md-10">Dinner</h5>
+		<button class="col-md-2">Add</button>
 	</div>
-	
-	<div class="foodList">
-		<div><img src="img/delete.png" alt="delete food item"></div>
-		<div>Banana</div>
-		<div><a>1</a></div>
-		<div>125</div>
-	</div>
-</div>
+</article>
