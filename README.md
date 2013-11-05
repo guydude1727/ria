@@ -1,16 +1,29 @@
-ria
+RIA Group Project: Health App Calculator/Tracker/Trainer/Game/Goal Maker/Helper/Make-Me-Lose-Weight-Now-Thingy
 ===
 
-A project for our RIA class. well we got some shit here and it is good. yep. 
+Download files, put them into your apache 'www' folder and then do the thing. The db.json will contain the CouchDB JSON 
+that you should curl to your running CouchDB database (Note: Anything in '[]' is optional. In this case, if you have setup 
+an admin account, you'll have to enter your credentials):
 
-My name is GuyDude. Look at me!! WEEEEE!!!! I'm The Dude Guy here. The guy who's a dude.
+Ex:
+curl -X PUT http://[username:password@]127.0.0.1:5984/nutrition/
+curl -X POST http://127.0.0.1:5984/nutrition/ -d @db.json -H "Content-Type: application/json"
+
+CouchDB should return something like this:
+{"ok":true,"id":"c6e2f3d7f8d0c91ce7938e9c0800131c","rev":"1-abadd48a09c270047658dbc38dc8a892"}
 
 
-Scan and Search, item info, running total. 
+Database Design:
 
-define scope 
+Tool: No-SQL using CouchDB
 
-phase 1 stuff we go to do 
+Database: Nutrition
+Document (a.k.a. table): Facts
 
-
-phase 2 stuff we wanna do
+Each field in the 'Facts' document should have at least the following (currently WIP):
+* Sugar
+* Cholesterol
+* Calories
+* Sodium
+* Potassium
+* 
