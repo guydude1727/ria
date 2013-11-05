@@ -2,21 +2,14 @@
 <html lang="en" ng-app>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Health App</title>
 
-		<!-- Add Script and CSS here you fools! DO IT NAOW! -->		
-		<script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
-		<script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/templateController.js"></script>
 		
-		<!--CSS FILES HERE FOOLS!-->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-		<link type="text/css" rel="stylesheet" href="css/animations.css"/>			
+		<!--<link type="text/css" rel="stylesheet" href="css/animations.css"/>			 -->
 	</head>
 
-	<body>
+	<body class="container">
 		
 		<div ng-controller="templateController" >
 			<select ng-model="template" ng-options="t.name for t in templates">
@@ -27,19 +20,29 @@
 				<div class="include-example" ng-include="template.url"></div>			
 			</div>
 		</div>
-
-
-			<nav class="row">
-				<p>
-					<a href="#" class="col-md-4">Diary</a>
-				</p>
-				<p>
-					<a href="#" class="col-md-4">Nutrition</a>
-				</p> 
-				<p>
-					<a href="#" class="col-md-4">Settings</a>
-				</p>
+			<nav>
+				<div class="row">
+					<div class="col-md-4">
+						<a href="#">Diary</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#">Nutrition</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#">Settings</a>
+					</div>
+				</div>
 			</nav>
-		</div>
+		
+		
+		<!-- Add Script and CSS here you fools! DO IT NAOW! -->		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<!--<script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script> -->
+		<script src="js/bootstrap.js"></script>
+		<script src="js/templateController.js"></script>
+		
+		<!--CSS FILES HERE FOOLS!-->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 	</body>
 </html>
