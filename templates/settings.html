@@ -1,16 +1,19 @@
-<header>
-	<h1>Settings</h1>
-	<button>Save</button><!-- SAVE BUTTON FOR CUSTOM FEATURES -->
-</header>
+<div class="row header">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-8"><h1>Settings</h1></div>
+	<div class="col-xs-2"><button>Save</button></div><!-- SAVE BUTTON FOR CUSTOM FEATURES -->
+</div>
 
-<select>
-	<option>Default</option>
-	<option>Custom</option>
-</select>
+<div class="row">
+	<select>
+		<option>Default</option>
+		<option>Custom</option>
+	</select>
+</div>
 
-<div>
-	<div>Calories</div>
-	<div>2000</div>
+<div class="row">
+	<div class="col-xs-10">Calories</div>
+	<div class="col-xs-2">2000</div>
 </div><!-- REPEAT THIS STRUCTURE FOR ALL THE FOLLOWING
 
 	Calories
@@ -32,9 +35,11 @@
 	Iron (%)
 -->
 
-<div>
-	<div>Calories</div>
-	<div><input type="number"></div>
+<div class="row">
+	<div class="col-xs-10">Calories</div>
+	<div class="col-xs-2"><input type="number"></div>
 </div><!-- THIS IS THE TEMPLATE WHEN THEY SELECT CUSTOM -->
 
-<button>Save</button><!-- POTENTIAL NECESSARY REDUNDANT SAVE BUTTON THAT APPEARS WITH CUSTOM SELECTION -->
+<div class="row">
+	<button>Save</button><!-- POTENTIAL NECESSARY REDUNDANT SAVE BUTTON THAT APPEARS WITH CUSTOM SELECTION -->
+</div>
