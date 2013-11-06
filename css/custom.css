@@ -2,10 +2,6 @@
 	background-color:black;
 }
 
-.header button {
-	background-color:blue;
-}
-
 h1 {
 	font-size:1.2em;
 	text-align:center;
@@ -51,8 +47,10 @@ input.setting{
 nav {
 	text-align:center;
 	background-color:black;
+	position:fixed;
 	width:100%;
-	margin:0;
+	bottom:0;
+	left:0;
 }
 
 nav div div {
