@@ -1,0 +1,17 @@
+{ 
+  "docs": [
+    {
+      "_id":"banana", 
+      "sugar":23,
+      "cholesterol":37,
+      "calories":42
+    },
+	
+	{
+	  "_id":"strawberry",
+	  "sugar":90,
+	  "cholesterol":90,
+	  "calories":90
+	}
+  ]
+}

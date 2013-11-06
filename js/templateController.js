@@ -9,3 +9,9 @@ function templateController($scope) {
 		, { name: 'settings.html', url: 'templates/settings.html'}];
 	$scope.template = $scope.templates[0];
 }
+
+
+function searchContext($scope, $resource) {
+	var dbResource = $resource('127.0.0.1:5984/ria_group/_all_docs',
+	{nutrition: {method:'GET'}});	
+}
