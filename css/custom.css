@@ -18,6 +18,10 @@ h2 {
 	text-align:right;
 }
 
+h3 {
+	font-size:1.5em;
+}
+
 .meals {
 	background-color:blue;
 	color:white;
@@ -26,6 +30,22 @@ h2 {
 
 .textRight {
 	text-align:right;
+}
+
+input.number, input.setting {
+	text-align:right;
+}
+
+input.number{
+	width:35px;
+}
+
+input.userSearch {
+	width:50%;
+}
+
+input.setting{
+	width:70px;
 }
 
 nav {
@@ -37,6 +57,7 @@ nav {
 
 nav div div {
 	border:1px solid white;
+	padding:1em;
 }
 
 nav a {
