@@ -1,52 +1,52 @@
 <div class="row header">	
-	<button class="col-xs-2">Edit</button>
-	<div class="col-xs-8"><h1>Daily Food Diary</h1></div>
-	<div class="col-xs-2"></div>
+	<div class="col-md-2 col-xs-2"><button>Edit</button></div>
+	<div class="col-md-8 col-xs-8"><h1>Daily Food Diary</h1></div>
+	<div class="col-md 2 col-xs-2"></div>
 </div>
 	
 <div class="date row">
 	<div class="leftArrow col-md-1 col-xs-1"></div>
-	<div class="today col-md-10 col-xs-10"><script type="text/javascript">
+	<div class="today col-md-10 col-xs-10"><h6><script type="text/javascript">
 		var today = new Date();
 		document.write(today);
-		</script></div>
+		</script></h6></div>
 	<div class="rightArrow col-md-1 col-xs-1"></div>
 </div>
 
 <div>
 	<div class="row">
 		<div class="col-xs-8">Calories left:</div>
-		<div class="col-xs-4">{{ 1200 }}</div>
+		<div class="col-xs-4"><h2>{{ 1200 }}</h2></div>
 	</div>
 	<div class="row"><progress value="125" max="2000"></progress>
 </div>
 
 <div class="infoBar row">
 	<div class="col-xs-6">Food Item</div>
-	<div class="col-xs-3">Servings</div>
-	<div class="col-xs-3">Calories</div>
+	<div class="col-xs-3 textRight">Servings</div>
+	<div class="col-xs-3 textRight">Calories</div>
 </div>
 
 <article>
-	<div class="row">
+	<div class="row meals">
 		<h5 class="col-xs-10">Breakfast</h5>
 		<button class="col-xs-2">Add</button>
 	</div>
 	<div class="foodList row">
 		<div class="col-xs-1"><img src="img/delete.png" alt="delete food item"></div>
 		<div class="col-xs-5">Banana</div>
-		<div class="col-xs-3"><a>1</a></div>
-		<div class="col-xs-3">125</div>
+		<div class="col-xs-3 textRight"><a>1</a></div>
+		<div class="col-xs-3 textRight">125</div>
 	</div>
 </article>
 <article>
-	<div class="row">
+	<div class="row meals">
 		<h5 class="col-xs-10">Lunch</h5>
 		<button class="col-xs-2">Add</button>
 	</div>
 </article>
 <article>
-	<div class="row">
+	<div class="row meals">
 		<h5 class="col-xs-10">Dinner</h5>
 		<button class="col-xs-2">Add</button>
 	</div>

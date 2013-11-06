@@ -1,0 +1,44 @@
+.header{
+	background-color:black;
+}
+
+.header button {
+	background-color:blue;
+}
+
+h1 {
+	font-size:1.2em;
+	text-align:center;
+	color:white;
+}
+
+h2 {
+	font-size:1.5em;
+	color:green;
+	text-align:right;
+}
+
+.meals {
+	background-color:blue;
+	color:white;
+	border-bottom:1px solid white;
+}
+
+.textRight {
+	text-align:right;
+}
+
+nav {
+	text-align:center;
+	background-color:black;
+	width:100%;
+	margin:0;
+}
+
+nav div div {
+	border:1px solid white;
+}
+
+nav a {
+	color:white;
+}
