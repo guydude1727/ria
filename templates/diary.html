@@ -1,7 +1,8 @@
-<header class="row">	
+<div class="row header">	
 	<button class="col-xs-2">Edit</button>
-	<h1>Daily Food Diary</h1>
-</header>
+	<div class="col-xs-8"><h1>Daily Food Diary</h1></div>
+	<div class="col-xs-2"></div>
+</div>
 	
 <div class="row">
 	<div class="leftArrow col-xs-1"></div>
@@ -11,9 +12,10 @@
 
 <div>
 	<div class="row">
-		<div class="col-xs-8">Calories left:</div><div class="col-xs-4">{{ 1200 }}</div>
+		<div class="col-xs-8">Calories left:</div>
+		<div class="col-xs-4">{{ 1200 }}</div>
 	</div>
-	<progress class="row">75%</progress>
+	<div class="row"><progress value="125" max="2000"></progress>
 </div>
 
 <div class="infoBar row">

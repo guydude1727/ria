@@ -1,10 +1,17 @@
-<header>
-	<button>Back</button>
-	<h1>Add Food</h1>
-</header>
-
-<div ng-controller="SearchCtrl">
-<input type="text" ng-model="data.message"/>
+<div class="row header">
+	<div class="col-xs-2"><button>Back</button></div>
+	<div class="col-xs-8"><h1>Add Food</h1></div>
+	<div class="col-xs-2"></div>
 </div>
-<button>Recent</button>
-<button>Scan</button>
+
+<div class="row" ng-controller="SearchCtrl">
+	<input type="text" ng-model="data.message"/>
+</div>
+
+<div class="row">
+	<button>Recent</button>
+</div>
+
+<div class="row">
+	<button>Scan</button>
+</div>
