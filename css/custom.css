@@ -1,3 +1,15 @@
+/* LET'S MAKE IT COLORFUL!
+
+Red: #ED193A rgba(237,25,58,1)
+Gray: #3D3D3D rgba(61,61,61,1)
+Off-White: #E6E6E6 rgba(230,230,230,1)
+Light Blue: #01C0EB rgba(1,192,235,1)
+Light Green: #66EF55 rgba(102,239,85,1)
+
+ */
+
+
+
 /* ==== HEADER STUFF ==== */
 
 .header{
@@ -30,6 +42,10 @@ h3 {
 	background-color:blue;
 	color:white;
 	border-bottom:1px solid white;
+}
+
+.RED {
+	color:red;
 }
 
 /* ==== ALIGN IT TO THE RIGHT! ==== */
