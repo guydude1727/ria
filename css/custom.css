@@ -1,3 +1,5 @@
+/* ==== HEADER STUFF ==== */
+
 .header{
 	background-color:black;
 }
@@ -8,15 +10,21 @@ h1 {
 	color:white;
 }
 
+/* ==== CALORIES ==== */
+
 h2 {
 	font-size:1.5em;
 	color:green;
 	text-align:right;
 }
 
+/* ==== DETAIL FOOD ITEM ==== */
+
 h3 {
 	font-size:1.5em;
 }
+
+/* ==== MEAL STUFF ==== */
 
 .meals {
 	background-color:blue;
@@ -24,9 +32,13 @@ h3 {
 	border-bottom:1px solid white;
 }
 
+/* ==== ALIGN IT TO THE RIGHT! ==== */
+
 .textRight {
 	text-align:right;
 }
+
+/* ==== INPUTS ==== */
 
 input.number, input.setting {
 	text-align:right;
@@ -43,6 +55,8 @@ input.userSearch {
 input.setting{
 	width:70px;
 }
+
+/* ==== NAV STUFF ==== */
 
 .extraSpace {
 	height:60px;
