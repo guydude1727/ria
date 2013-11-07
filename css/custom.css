@@ -44,12 +44,16 @@ input.setting{
 	width:70px;
 }
 
+.extraSpace {
+	height:60px;
+}
+
 nav {
 	text-align:center;
 	background-color:black;
 	position:fixed;
 	width:100%;
-	bottom:0;
+	bottom:-1px;
 	left:0;
 }
 
