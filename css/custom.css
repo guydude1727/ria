@@ -13,7 +13,7 @@ Light Green: #66EF55 rgba(102,239,85,1)
 /* ==== HEADER STUFF ==== */
 
 .header{
-	background-color:black;
+	background-color: #3D3D3D;
 }
 
 h1 {
@@ -26,7 +26,7 @@ h1 {
 
 h2 {
 	font-size:1.5em;
-	color:green;
+	color: #66EF55;
 	text-align:right;
 }
 
@@ -40,12 +40,12 @@ h3 {
 
 .meals {
 	background-color:blue;
-	color:white;
+	color:#E6E6E6;
 	border-bottom:1px solid white;
 }
 
 .RED {
-	color:red;
+	color:#ED193A;
 }
 
 /* ==== ALIGN IT TO THE RIGHT! ==== */
@@ -80,7 +80,7 @@ input.setting{
 
 nav {
 	text-align:center;
-	background-color:black;
+	background-color:#3D3D3D;
 	position:fixed;
 	width:100%;
 	bottom:-1px;
@@ -88,10 +88,10 @@ nav {
 }
 
 nav div div {
-	border:1px solid white;
+	border:1px solid #E6E6E6;
 	padding:1em;
 }
 
 nav a {
-	color:white;
+	color:#E6E6E6;
 }
