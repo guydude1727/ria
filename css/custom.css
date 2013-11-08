@@ -12,6 +12,10 @@ Light Green: #66EF55 rgba(102,239,85,1)
 
 /* ==== HEADER STUFF ==== */
 
+body {
+	background-color:#E6E6E6;
+}
+
 .header{
 	background-color: #3D3D3D;
 }
@@ -20,14 +24,16 @@ h1 {
 	font-size:1.2em;
 	text-align:center;
 	color:white;
+	margin-top:10px;
 }
 
 /* ==== CALORIES ==== */
 
 h2 {
 	font-size:1.5em;
-	color: #66EF55;
+	color:rgba(0,200,0,1);
 	text-align:right;
+	margin-top:5px;
 }
 
 /* ==== DETAIL FOOD ITEM ==== */
@@ -39,9 +45,25 @@ h3 {
 /* ==== MEAL STUFF ==== */
 
 .meals {
-	background-color:blue;
+	background-color:rgba(1,192,235,1);
 	color:#E6E6E6;
 	border-bottom:1px solid white;
+}
+
+h5 {
+	padding:2px 0;
+}
+
+.addBtn {
+	margin:5px 0 0 0;
+	color:rgba(255,255,255,1);
+	width:15%;
+	background-color:rgba(0,0,255,.25);
+	border:1px solid rgba(255,255,255,.5);
+}
+
+.addBtn span {
+	margin-left:-10%;
 }
 
 .RED {
