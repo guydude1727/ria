@@ -9,11 +9,20 @@
  *
  */
  
+// Some global variable crap
+var couchDB = 'http://127.0.0.1:5984'; // CouchDB IP address; Using a local address for developing
+var nutritionDB = '/nutrition';
+var nutritionDoc = '/nutritionDoc';
+
+// DB stuffs
+var key = "";
+var rev = "";
+ 
 // Create app module
 var app = angular.module("healthApp", []);
 
 // Add controller to app angular module 
-app.controller("templateController", function($scope) {
+app.controller("templateController", function($scope, $http) {
 	$scope.templates = 
 		[ { name: 'diary.html', url: 'templates/diary.html'}
 		, { name: 'detail.html', url: 'templates/detail.html'}
@@ -23,12 +32,26 @@ app.controller("templateController", function($scope) {
 		, { name: 'scan.html', url: 'templates/scan.html'}
 		, { name: 'settings.html', url: 'templates/settings.html'}];
 	$scope.template = $scope.templates[0];
+  
+  
+  initApp($http);
 });
 
 
-function searchContext($scope, $resource) {
-	var dbResource = $resource('127.0.0.1:5984/ria_group/_all_docs',
-	{nutrition: {method:'GET'}});	
+function initApp($http) {
+	$http({method: 'GET', url: '/couchdb/nutrition/_all_docs'}).
+    success(function(data, status, headers, config) {
+      var docs = data.rows[0]; 
+      key = data.rows[0].key;
+      rev = data.rows[0].value.rev;
+      $http({method: 'GET', url: '/couchdb/nutrition/'+key}).
+        success(function(data){
+        console.log("GOT DOCUMENT: " + data.docs[0].sugar);
+        }).
+        error(function(){})
+      console.log("Key: " + key + "\nRevision: " + rev);
+    }).
+    error(function(data, status, headers, config){})
 }
 
 
@@ -40,6 +63,11 @@ function searchContext($scope, $resource) {
  */
 
 function add($http, foodObject){
-
-
+  $http({method: 'POST', url: '/couchdb/nutrition/' + key}).
+  success(function(data, status, headers, config){
+    
+  }).
+  error(function(data, status, headers, config){}
+  
+  );
 }
