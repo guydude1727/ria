@@ -23,6 +23,7 @@ var app = angular.module("healthApp", []);
 
 // Add controller to app angular module 
 app.controller("templateController", function($scope, $http) {
+  // Templates for the app; These are the pages yo!
 	$scope.templates = 
 		[ { name: 'diary.html', url: 'templates/diary.html'}
 		, { name: 'detail.html', url: 'templates/detail.html'}
@@ -38,15 +39,31 @@ app.controller("templateController", function($scope, $http) {
 });
 
 
+/*
+ * A directive for displaying Row items in the Diary view 
+ */
+ app.directive('diaryEntry', function(){
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+      console.log("I see your directive and raise you fitty!");
+    }
+  }
+ })
+
+
 function initApp($http) {
+  var documents;
 	$http({method: 'GET', url: '/couchdb/nutrition/_all_docs'}).
     success(function(data, status, headers, config) {
+      // Assuming that the first document is the one we want... which it should be
       var docs = data.rows[0]; 
       key = data.rows[0].key;
       rev = data.rows[0].value.rev;
+      // Now grab all the documents with the key we just got
       $http({method: 'GET', url: '/couchdb/nutrition/'+key}).
         success(function(data){
-        console.log("GOT DOCUMENT: " + data.docs[0].sugar);
+          console.log("GOT DOCUMENT: " + data.docs[0].sugar);
         }).
         error(function(){})
       console.log("Key: " + key + "\nRevision: " + rev);
