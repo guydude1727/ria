@@ -1,0 +1,128 @@
+/* LET'S MAKE IT COLORFUL!
+
+Red: #ED193A rgba(237,25,58,1)
+Gray: #3D3D3D rgba(61,61,61,1)
+Off-White: #E6E6E6 rgba(230,230,230,1)
+Light Blue: #01C0EB rgba(1,192,235,1)
+Light Green: #66EF55 rgba(102,239,85,1)
+
+ */
+
+
+
+/* ==== HEADER STUFF ==== */
+
+body {
+	background-color:#E6E6E6;
+}
+
+.header{
+	background-color: #3D3D3D;
+}
+
+h1 {
+	font-size:1.2em;
+	text-align:center;
+	color:white;
+	margin-top:10px;
+}
+
+/* ==== CALORIES ==== */
+
+h2 {
+	font-size:1.5em;
+	color:rgba(0,200,0,1);
+	text-align:right;
+	margin-top:5px;
+}
+
+/* ==== DETAIL FOOD ITEM ==== */
+
+h3 {
+	font-size:1.5em;
+}
+
+/* ==== MEAL STUFF ==== */
+
+.meals {
+	background-color:rgba(1,192,235,1);
+	color:#E6E6E6;
+	border-bottom:1px solid white;
+}
+
+h5 {
+	padding:2px 0;
+}
+
+.addBtn {
+	margin:5px 0 0 0;
+	color:rgba(255,255,255,1);
+	width:15%;
+	background-color:rgba(0,0,255,.25);
+	border:1px solid rgba(255,255,255,.5);
+}
+
+.addBtn span {
+	margin-left:-10%;
+}
+
+.RED {
+	color:#ED193A;
+}
+
+/* ==== BUTTONS ==== */
+
+.headerBtn {
+	margin:4px 0 0 0;
+}
+
+/* ==== ALIGN IT TO THE RIGHT! ==== */
+
+.textRight {
+	text-align:right;
+}
+
+.floatRight {
+	float:right;
+}
+
+/* ==== INPUTS ==== */
+
+input.number, input.setting {
+	text-align:right;
+}
+
+input.number{
+	width:35px;
+}
+
+input.userSearch {
+	width:50%;
+}
+
+input.setting{
+	width:70px;
+}
+
+/* ==== NAV STUFF ==== */
+
+.extraSpace {
+	height:60px;
+}
+
+nav {
+	text-align:center;
+	background-color:#3D3D3D;
+	bottom:-1px;
+	left:0;
+}
+
+nav div div {
+	border-left:1px solid #E6E6E6;
+	border-right:1px solid #E6E6E6;
+	padding:1em;
+}
+
+nav a {
+	color:#E6E6E6;
+}

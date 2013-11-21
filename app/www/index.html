@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="healthControllers">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Health App</title>
+
+		
+		<!--<link type="text/css" rel="stylesheet" href="css/animations.css"/>			 -->
+	</head>
+
+	<body class="container">
+		
+		<div ng-controller="templateController" >
+			<select ng-model="template" ng-options="t.name for t in templates">
+				<option value="">(blank)</option>
+			</select>
+			url of the template: <tr>{{template.url}}</tr>
+			<div class="example-animate-container">
+				<div class="include-example" ng-include="template.url"></div>			
+			</div>
+		</div>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+			<div class="row">
+				<div class="col-md-4 col-xs-4">
+					<a href="#"><span class="glyphicon glyphicon-cutlery"></span> Diary</a>
+				</div>
+				<div class="col-md-4 col-xs-4">
+					<a data-ng-click={{template = 'templates/nutrition.html'}><span class="glyphicon glyphicon-list-alt"></span> Nutrition</a>
+				</div>
+				<div class="col-md-4 col-xs-4">
+					<a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="extraSpace"></div>
+		
+		<!-- Add Script and CSS here you fools! DO IT NAOW! -->		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		<!--<script src="http:////ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>-->
+		<!--<script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script> -->
+		<script src="js/bootstrap.js"></script>
+		<script src="js/templateController.js"></script>
+		
+		<!--CSS FILES HERE FOOLS!-->
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="css/custom.css">
+	</body>
+</html>
