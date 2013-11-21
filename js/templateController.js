@@ -17,12 +17,18 @@ var nutritionDoc = '/nutritionDoc';
 // DB stuffs
 var key = "";
 var rev = "";
- 
-// Create app module
-var app = angular.module("healthApp", []);
+
+// Create variable holding the module object that we'll put all our crap on
+var healthControllers = angular.module('healthControllers', []);
 
 // Add controller to app angular module 
-app.controller("templateController", function($scope, $http) {
+healthControllers.controller("templateController", function($scope, $http) {
+
+  $scope.templateStates = {
+    DIARY: 0,
+    NUTRITION: 3,
+    SETTINGS: 6
+  };
   // Templates for the app; These are the pages yo!
 	$scope.templates = 
 		[ { name: 'diary.html', url: 'templates/diary.html'}
@@ -34,7 +40,6 @@ app.controller("templateController", function($scope, $http) {
 		, { name: 'settings.html', url: 'templates/settings.html'}];
 	$scope.template = $scope.templates[0];
   
-  
   initApp($http);
 });
 
@@ -42,9 +47,10 @@ app.controller("templateController", function($scope, $http) {
 /*
  * A directive for displaying Row items in the Diary view 
  */
- app.directive('diaryEntry', function(){
+ healthControllers.directive('diaryEntry', function(){
   return {
     restrict: 'A',
+    templateUrl: 'templates/layouts/diaryEntry.html', 
     link: function(scope, elem, attrs) {
       console.log("I see your directive and raise you fitty!");
     }
