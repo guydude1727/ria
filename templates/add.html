@@ -1,17 +1,19 @@
 <div class="row header">
-	<div class="col-xs-2"><button class="btn btn-sm">Back</button></div>
+	<div class="col-xs-2 headerBtn"><button class="btn btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button></div>
 	<div class="col-xs-8"><h1>Add Food</h1></div>
 	<div class="col-xs-2"></div>
 </div>
 
-<div class="row" ng-controller="SearchCtrl">
-	<input type="text" ng-model="data.message" class="typeSearch">
-</div>
 
-<div class="row">
-	<button>Recent</button>
-</div>
+	<div class="input-group" ng-controller="SearchCtrl">
+		<input type="text" ng-model="data.message" class="form-control typeSearch">
+		<span class="input-group-addon glyphicon glyphicon-search"></span>
+	</div>
 
-<div class="row">
-	<button>Scan</button>
-</div>
+	<div class="row">
+		<button>Recent</button>
+	</div>
+
+	<div class="row">
+		<button>Scan <span class="glyphicon glyphicon-barcode floatRight"></span></button>
+	</div>

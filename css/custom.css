@@ -70,10 +70,20 @@ h5 {
 	color:#ED193A;
 }
 
+/* ==== BUTTONS ==== */
+
+.headerBtn {
+	margin:4px 0 0 0;
+}
+
 /* ==== ALIGN IT TO THE RIGHT! ==== */
 
 .textRight {
 	text-align:right;
+}
+
+.floatRight {
+	float:right;
 }
 
 /* ==== INPUTS ==== */
@@ -103,14 +113,13 @@ input.setting{
 nav {
 	text-align:center;
 	background-color:#3D3D3D;
-	position:fixed;
-	width:100%;
 	bottom:-1px;
 	left:0;
 }
 
 nav div div {
-	border:1px solid #E6E6E6;
+	border-left:1px solid #E6E6E6;
+	border-right:1px solid #E6E6E6;
 	padding:1em;
 }
 
