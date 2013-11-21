@@ -9,9 +9,9 @@
  */
 
 // Create main app module
-var app = angular.module('healthApp', ['ngRoute', 'templateController']);
+var app = angular.module('healthApp', [/*'ngRoute', */ 'templateController']);
 
-app.config(['$routeProvider', 
+/*app.config(['$routeProvider', 
   function($routeProvider){
     $routeProvider.
       when('/diary', {
@@ -43,5 +43,5 @@ app.config(['$routeProvider',
         controller: 'SettingsCtrl'
       }).
       otherwise({ recirectTo: '/diary'});
-  }]);
+  }]); */
 // --------------------------------------------------------------------------//

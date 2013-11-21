@@ -22,7 +22,7 @@ var rev = "";
 var healthControllers = angular.module('healthControllers', []);
 
 // Add controller to app angular module 
-healthControllers.controller("templateController", function($scope, $http) {
+healthControllers.controller('templateController', function($scope, $http) {
 
   $scope.templateStates = {
     DIARY: 0,
@@ -40,7 +40,7 @@ healthControllers.controller("templateController", function($scope, $http) {
 		, { name: 'settings.html', url: 'templates/settings.html'}];
 	$scope.template = $scope.templates[0];
   
-  initApp($http);
+  //initApp($http);
 });
 
 
