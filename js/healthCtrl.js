@@ -19,10 +19,10 @@ var key = "";
 var rev = "";
 
 // Create variable holding the module object that we'll put all our crap on
-var healthControllers = angular.module('healthControllers', []);
+var healthCtrl = angular.module('healthCtrl', []);
 
 // Add controller to app angular module 
-healthControllers.controller('templateController', function($scope, $http) {
+healthCtrl.controller('healthCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
   $scope.templateStates = {
     DIARY: 0,
@@ -41,13 +41,26 @@ healthControllers.controller('templateController', function($scope, $http) {
 	$scope.template = $scope.templates[0];
   
   //initApp($http);
+  
+  $scope.switchView = function(url) {
+    console.log("CLICKED");
+    $('.include-example').attr('data-ng-include', url);
+  };
+  
+}]);
+
+healthCtrl.controller('NutritionCtrl', function($scope) {
+  $scope.helloWorld="This is coming from the Details controller";
 });
 
+healthCtrl.controller('SettingsCtrl', function($scope) {
+  $scope.helloWorld="This is coming from the Details controller";
+});
 
 /*
  * A directive for displaying Row items in the Diary view 
  */
- healthControllers.directive('diaryEntry', function(){
+ healthCtrl.directive('diaryEntry', function(){
   return {
     restrict: 'A',
     templateUrl: 'templates/layouts/diaryEntry.html', 
