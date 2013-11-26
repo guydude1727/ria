@@ -1,6 +1,6 @@
 /*
  *  RIA Group Project: Nutrition Goals App
- *  
+ *  Filename: healthCtrl.js
  *  Authors: Nathan Robinson, Matt 'Big Lew' Lewis, Stephen Brough
  *  Version: 0.0.1  
  *  Date: November 14, 2013
@@ -37,6 +37,18 @@ healthCtrl.controller('healthCtrl', ['$scope', '$http', '$location', function($s
 	$scope.template = $scope.templates[0]; */
   
   //initApp($http);  
+  
+  $scope.scan =  function() {
+            // See below for all available options. 
+            cordova.exec(success, failure, "ScanditSDK", "scan",
+              ["RfjeBlP5EeOcWPW7nuxYd/Dxk/0mrz+1Sbf9LBpCkxk",
+                {"beep": true,
+                "1DScanning" : true,
+                "2DScanning" : true
+                }
+              ]
+            );
+          };
 }]);
 
 
@@ -70,7 +82,7 @@ function initApp($http) {
         error(function(){})
       console.log("Key: " + key + "\nRevision: " + rev);
     }).
-    error(function(data, status, headers, config){})
+    error(function(data, status, headers, config){});  
 }
 
 
