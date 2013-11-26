@@ -102,3 +102,17 @@ function add($http, foodObject){
   
   );
 }
+/*
+ *  Read in local file
+ *
+ *  
+ *  
+ */
+ myApp.controller ('localFileLoader', function($http, $scope){ 
+
+//$scope.myapiJsonData = {"firstName":"jo jo the monkey" };
+$http.get("../db.json").success(function(data) {
+$scope.myapiJsonData = data; 
+});
+
+});

@@ -22,3 +22,19 @@
 		</ul>
 	</div>
 </div>
+<div class="row infoBar">
+	<div class="col-xs-6">Food Item</div>
+	<div class="col-xs-3">Servings</div>
+	<div class="col-xs-3">Total</div>
+</div>
+<div class="row">
+	<ul ng-controller="localFileLoader">
+        	<li ng-repeat="JsonData in myapiJsonData">
+          		<div class="col-xs-1"><input type="checkbox"></div>
+				<div class="col-xs-5">{{JsonData. docs._pkey}}</div>
+				<div class="col-xs-3"><input type="number" value="1" class="number"></div>
+				<div class="col-xs-3">{{JsonData.docs.calories}}</div>
+          	</li>
+    </ul>
+	
+</div>
