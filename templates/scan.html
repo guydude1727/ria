@@ -3,4 +3,50 @@
 	<div class="col-xs-8"><h1>Scan Bar Code</h1></div>
 	<div class="col-xs-2"></div>
 </div>
+
  <!-- Pull in scan-ann-man-tron -->
+ 
+ <div onload="onBodyLoad()" style="background: url(img/ScanditSDKDemo-Splash.png) no-repeat;background-size: 100%;background-color: #000000">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            function onBodyLoad()
+            {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+        function success(resultArray) {
+
+        alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
+
+                // NOTE: Scandit SDK Phonegap Plugin Versions 1.* for iOS report
+                // the scanning result as a concatenated string.
+                // Starting with version 2.0.0, the Scandit SDK Phonegap
+                // Plugin for iOS reports the result as an array
+                // identical to the way the Scandit SDK plugin for Android reports results.
+
+                // If you are running the Scandit SDK Phonegap Plugin Version 1.* for iOS,
+                // use the following approach to generate a result array from the string result returned:
+                // resultArray = result.split("|");
+            }
+
+            function failure(error) {
+                alert("Failed: " + error);
+            }
+
+            function scan() {
+                // See below for all available options. 
+                cordova.exec(success, failure, "ScanditSDK", "scan",
+                             ["RfjeBlP5EeOcWPW7nuxYd/Dxk/0mrz+1Sbf9LBpCkxk",
+                              {"beep": true,
+                              "1DScanning" : true,
+                              "2DScanning" : true}]);
+            }
+
+            app.initialize();
+            </script>
+
+        <div align="center" valign="center">
+            <input type="button" value="scan" onclick="scan()" style="margin-top: 230px; width: 100px; height: 30px; font-size: 1em"/>
+        </div>
+    </div>

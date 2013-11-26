@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.mirasense.scanditsdk.plugin" version="1.1.0">
+  <name>ScanditBarcodeScanner</name>
+  <!-- ios -->
+  <platform name="android">
+    <!-- register plugin -->
+    <config-file target="res/xml/config.xml" parent="/widget">
+      <feature name="ScanditSDK">
+        <param name="android-package" value="com.mirasense.scanditsdk.plugin.ScanditSDK"/>
+      </feature>
+    </config-file>
+    <!-- add permissions in AndroidManifest.xml file-->
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.CAMERA"/>
+      <uses-permission android:name="android.permission.VIBRATE"/>
+      <uses-permission android:name="android.permission.INTERNET"/>
+    </config-file>
+    <!-- add ScanditSDK Activity to the "application" section of AndroidManifest.xml file -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.mirasense.scanditsdk.plugin.ScanditSDKActivity"/>
+    </config-file>
+    <!-- copy Scandit SDK libs -->
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/libs/scanditsdk-barcodepicker-android-3.5.1.jar" target-dir="libs"/>
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/libs/armeabi/libscanditsdk-android-3.5.1.so" target-dir="libs/armeabi"/>
+    <!-- copy Scandit SDK resources (images, beep) -->
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/res/raw/beep.wav" target-dir="res/raw"/>
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/res/raw/poweredby2x.png" target-dir="res/raw"/>
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/res/raw/ic_btn_search.png" target-dir="res/raw"/>
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/res/raw/flashlight_turn_off_icon.png" target-dir="res/raw"/>
+    <source-file src="src/android/scanditsdk-community-android_3.5.1/res/raw/flashlight_turn_on_icon.png" target-dir="res/raw"/>
+    <!-- add plugin source code -->
+    <source-file src="src/android/com/mirasense/scanditsdk/plugin/ScanditSDK.java" target-dir="src/com/mirasense/scanditsdk/plugin"/>
+    <source-file src="src/android/com/mirasense/scanditsdk/plugin/ScanditSDKActivity.java" target-dir="src/com/mirasense/scanditsdk/plugin"/>
+  </platform>
+</plugin>

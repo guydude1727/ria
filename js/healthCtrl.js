@@ -24,13 +24,9 @@ var healthCtrl = angular.module('healthCtrl', []);
 // Add controller to app angular module 
 healthCtrl.controller('healthCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
-  $scope.templateStates = {
-    DIARY: 0,
-    NUTRITION: 3,
-    SETTINGS: 6
-  };
   // Templates for the app; These are the pages yo!
-	$scope.templates = 
+  // NOTE: For debugging with the dropdown options menu only
+	/*$scope.templates = 
 		[ { name: 'diary.html', url: 'templates/diary.html'}
 		, { name: 'detail.html', url: 'templates/detail.html'}
 		, { name: 'add.html', url: 'templates/add.html'}
@@ -38,24 +34,11 @@ healthCtrl.controller('healthCtrl', ['$scope', '$http', '$location', function($s
 		, { name: 'recent.html', url: 'templates/recent.html'}
 		, { name: 'scan.html', url: 'templates/scan.html'}
 		, { name: 'settings.html', url: 'templates/settings.html'}];
-	$scope.template = $scope.templates[0];
+	$scope.template = $scope.templates[0]; */
   
-  //initApp($http);
-  
-  $scope.switchView = function(url) {
-    console.log("CLICKED");
-    $('.include-example').attr('data-ng-include', url);
-  };
-  
+  //initApp($http);  
 }]);
 
-healthCtrl.controller('NutritionCtrl', function($scope) {
-  $scope.helloWorld="This is coming from the Details controller";
-});
-
-healthCtrl.controller('SettingsCtrl', function($scope) {
-  $scope.helloWorld="This is coming from the Details controller";
-});
 
 /*
  * A directive for displaying Row items in the Diary view 
