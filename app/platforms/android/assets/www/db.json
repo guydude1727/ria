@@ -1,7 +1,7 @@
 {
     "docs": [
         {
-            "_pkey": "banana",
+            "key": "banana",
             "barcode": 4011,
             "calories": 105,
             "caloriesOfFat": 0,
@@ -21,7 +21,7 @@
             "iron": 1
         },
         {
-            "_pkey": "strawberry",
+            "key": "strawberry",
             "barcode": null,
             "calories": 40,
             "caloriesOfFat": 0,
@@ -41,7 +41,7 @@
             "iron": 0
         },
         {
-            "_pkey": "cherry",
+            "key": "cherry",
             "barcode": null,
             "calories": 77,
             "caloriesOfFat": 0,
@@ -61,7 +61,7 @@
             "iron": 2
         },
         {
-            "_pkey": "apple",
+            "key": "apple",
             "barcode": 0,
             "calories": 95,
             "caloriesOfFat": 0,
@@ -81,7 +81,7 @@
             "iron": 0
         },
         {
-            "_pkey": "orange",
+            "key": "orange",
             "barcode": 0,
             "calories": 45,
             "caloriesOfFat": 0,
@@ -101,7 +101,7 @@
             "iron": 0
         },
         {
-            "_pkey": "egg",
+            "key": "egg",
             "barcode": 0,
             "calories": 78,
             "caloriesOfFat": 45,
@@ -121,7 +121,7 @@
             "iron": 3
         },
         {
-            "_pkey": "grape",
+            "key": "grape",
             "barcode": 0,
             "calories": 62,
             "caloriesOfFat": 0,
@@ -141,7 +141,7 @@
             "iron": 1
         },
         {
-            "_pkey": "peanut",
+            "key": "peanut",
             "barcode": 0,
             "calories": 828,
             "caloriesOfFat": 623,
@@ -161,7 +161,7 @@
             "iron": 37
         },
         {
-            "_pkey": "almonuds",
+            "key": "almonuds",
             "barcode": 0,
             "calories": 823,
             "caloriesOfFat": 592,
@@ -181,7 +181,7 @@
             "iron": 29
         },
         {
-            "_pkey": "walnuts",
+            "key": "walnuts",
             "barcode": 0,
             "calories": 785,
             "caloriesOfFat": 655,
@@ -201,7 +201,7 @@
             "iron": 19
         },
         {
-            "_pkey": "pecans",
+            "key": "pecans",
             "barcode": 0,
             "calories": 684,
             "caloriesOfFat": 596,
@@ -221,7 +221,7 @@
             "iron": 13
         },
         {
-            "_pkey": "",
+            "key": "",
             "barcode": 0,
             "calories": 0,
             "caloriesOfFat": 0,

@@ -9,34 +9,7 @@
  <div onload="onBodyLoad()" style="background: url(img/ScanditSDKDemo-Splash.png) no-repeat;background-size: 100%;background-color: #000000">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-          function onBodyLoad() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-          }
-
-          function success(resultArray) {
-            alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);              
-          }
-
-          function failure(error) {
-            alert("Failed: " + error);
-          }
-
-          function scan() {
-            // See below for all available options. 
-            cordova.exec(success, failure, "ScanditSDK", "scan",
-              ["RfjeBlP5EeOcWPW7nuxYd/Dxk/0mrz+1Sbf9LBpCkxk",
-                {"beep": true,
-                "1DScanning" : true,
-                "2DScanning" : true
-                }
-              ]
-            );
-                
-          } 
-
-          app.initialize();
-        </script>
+        <script type="text/javascript">app.initialize();</script>
 
         <div align="center" valign="center">
             <input type="button" value="scan" data-ng-click="scan()" style="margin-top: 230px; width: 100px; height: 30px; font-size: 1em"/>

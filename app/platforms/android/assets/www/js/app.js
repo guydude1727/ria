@@ -18,7 +18,7 @@ app.config(['$routeProvider',
         templateUrl: 'templates/diary.html',
         controller: 'DiaryCtrl'
       }).
-      when('/detail',{
+      when('/detail/:barcode',{
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
       }).
@@ -42,6 +42,9 @@ app.config(['$routeProvider',
         templateUrl: 'templates/settings.html',
         controller: 'SettingsCtrl'
       }).
+      when('/newItem/:barcode', {
+        templateUrl: 'templates/newItem.html',
+        controller: 'NewItemCtrl'
+      }).
       otherwise({ recirectTo: '/diary'});
   }]); 
-// --------------------------------------------------------------------------//
