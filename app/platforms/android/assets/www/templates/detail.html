@@ -5,44 +5,44 @@
 </div>
 
 <div class="row detail">
-	<div class="col-md-7 col-xs-7"><h3>Banana</h3></div>
+	<div class="col-md-7 col-xs-7"><h3>{{ foodItem.key }}</h3></div>
 	<div class="col-md-3 col-xs-3 textRight">Servings:</div>
-	<div class="col-md-2 col-xs-2"><input type="number" value="1" class="number floatRight" ng-model="servings"></div>
+	<div class="col-md-2 col-xs-2"><input type="number" value="1" class="number floatRight" ng-init="servings=1"></div>
 </div>
 
 <div class="row">
 	<div class="col-md-10 col-xs-10">Serving Size</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.size}}</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.servingSize }}</div>
 </div>
 
 <div class="row">
 	<div class="col-md-10 col-xs-10">Servings Per Container</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.per}}</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.numServings }}</div>
 </div>
 
 <div class="row">
 	<div class="col-md-10 col-xs-10">Calories</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.calories * servings}}</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.calories * servings }}</div>
 </div>
 <div class="row">
 	<div class="col-md-10 col-xs-10">Total Fat(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.totalFat * servings}}</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.totalFat * servings }}</div>
 </div>
 <div class="row">
-	<div class="col-md-10 col-xs-10">Saturated(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.saturated * servings}}</div>
+	<div class="col-md-10 col-xs-10">Saturated Fat(g)</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.saturatedFat * servings }}</div>
 </div>
 <div class="row">
-	<div class="col-md-10 col-xs-10">Polyunsaturated(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.poly * servings}}</div>
+	<div class="col-md-10 col-xs-10">Polyunsaturated Fat(g)</div>
+	<div class="col-md-2 col-xs-2 textRight">{{ foodItem.polyUnsaturated * servings }}</div>
 </div>
 <div class="row">
-	<div class="col-md-10 col-xs-10">Monosaturated(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.mono * servings}}</div>
+	<div class="col-md-10 col-xs-10">Monosaturated Fat(g)</div>
+	<div class="col-md-2 col-xs-2 textRight">{{foodItem.monoSaturated * servings}}</div>
 </div>
 <div class="row">
-	<div class="col-md-10 col-xs-10">Trans(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.trans * servings}}</div>
+	<div class="col-md-10 col-xs-10">Trans Fat(g)</div>
+	<div class="col-md-2 col-xs-2 textRight">{{foodItem.transFat * servings}}</div>
 </div>
 <div class="row">
 	<div class="col-md-10 col-xs-10">Cholesterol(mg)</div>
@@ -57,8 +57,8 @@
 	<div class="col-md-2 col-xs-2 textRight">{{foodItem.potassium * servings}}</div>
 </div>
 <div class="row">
-	<div class="col-md-10 col-xs-10">Total Carbs(g)</div>
-	<div class="col-md-2 col-xs-2 textRight">{{foodItem.carbs * servings}}</div>
+	<div class="col-md-10 col-xs-10">Total Carbohydrates(g)</div>
+	<div class="col-md-2 col-xs-2 textRight">{{foodItem.totalCarbs * servings}}</div>
 </div>
 <div class="row">
 	<div class="col-md-10 col-xs-10">Dietary Fiber(g)</div>
