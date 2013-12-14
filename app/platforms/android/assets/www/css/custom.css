@@ -38,8 +38,22 @@ h2 {
 
 /* ==== DETAIL FOOD ITEM ==== */
 
+.alert-info span {
+	font-size:.8em;
+}
+
+.alert-info input {
+	width:100%;
+}
+
 h3 {
-	font-size:1.5em;
+	font-size:1.25em;
+	margin-top:0;
+	text-align:center;
+}
+
+.bgWhite {
+	background-color:#fff;
 }
 
 /* ==== MEAL STUFF ==== */

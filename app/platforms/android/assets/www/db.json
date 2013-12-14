@@ -1,10 +1,10 @@
 {
     "docs": [
         {
-            "key": "banana",
+            "key": "Banana",
             "barcode": 4011,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 banana",
+            "numServings":1,
             "calories": 105,
             "caloriesOfFat": 0,
             "totalFat": 0.4,
@@ -23,10 +23,10 @@
             "iron": 1
         },
         {
-            "key": "strawberry",
+            "key": "Strawberry",
             "barcode": 1234,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 strawberry",
+            "numServings":1,
             "calories": 40,
             "caloriesOfFat": 0,
             "totalFat": 0,
@@ -45,10 +45,10 @@
             "iron": 0
         },
         {
-            "key": "cherry",
-            "barcode": null,
-            "servingSize":2,
-            "numServings":2,
+            "key": "Cherry",
+            "barcode": 5678,
+            "servingSize":"1 cherry",
+            "numServings":1,
             "calories": 77,
             "caloriesOfFat": 0,
             "totalFat": 0.5,
@@ -67,10 +67,10 @@
             "iron": 2
         },
         {
-            "key": "apple",
+            "key": "Apple",
             "barcode": 15,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 apple",
+            "numServings":1,
             "calories": 95,
             "caloriesOfFat": 0,
             "totalFat": 0.3,
@@ -89,10 +89,10 @@
             "iron": 0
         },
         {
-            "key": "orange",
+            "key": "Orange",
             "barcode": 17,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 orange",
+            "numServings":1,
             "calories": 45,
             "caloriesOfFat": 0,
             "totalFat": 0.1,
@@ -111,10 +111,10 @@
             "iron": 0
         },
         {
-            "key": "egg",
+            "key": "Egg",
             "barcode": 195,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 egg",
+            "numServings":1,
             "calories": 78,
             "caloriesOfFat": 45,
             "totalFat": 5,
@@ -133,10 +133,10 @@
             "iron": 3
         },
         {
-            "key": "grape",
+            "key": "Grapes",
             "barcode": 156,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 cup",
+            "numServings":1,
             "calories": 62,
             "caloriesOfFat": 0,
             "totalFat": 0.3,
@@ -155,10 +155,10 @@
             "iron": 1
         },
         {
-            "key": "peanut",
+            "key": "Peanut",
             "barcode": 144,
-            "servingSize":2,
-            "numServings":2,
+            "servingSize":"1 cup",
+            "numServings":1,
             "calories": 828,
             "caloriesOfFat": 623,
             "totalFat": 72,
@@ -177,11 +177,11 @@
             "iron": 37
         },
         {
-            "key": "almonuds",
+            "key": "Almonds",
             "barcode": 13864,
-            "servingSize":2,
-            "numServings":2,
-            "calories": 823,
+            "servingSize":"16 pieces",
+            "numServings":1,
+            "calories": 110,
             "caloriesOfFat": 592,
             "totalFat": 71,
             "saturatedFat": 5,
@@ -199,11 +199,11 @@
             "iron": 29
         },
         {
-            "key": "walnuts",
+            "key": "Walnuts",
             "barcode": 16875,
-            "servingSize":2,
-            "numServings":2,
-            "calories": 785,
+            "servingSize":"14 halves",
+            "numServings":1,
+            "calories": 185,
             "caloriesOfFat": 655,
             "totalFat": 78,
             "saturatedFat": 7,
@@ -221,11 +221,11 @@
             "iron": 19
         },
         {
-            "key": "pecans",
+            "key": "Pecans",
             "barcode": 101874,
-            "servingSize":2,
-            "numServings":2,
-            "calories": 684,
+            "servingSize":"1/4 cup",
+            "numServings":1,
+            "calories": 188,
             "caloriesOfFat": 596,
             "totalFat": 71,
             "saturatedFat": 6,
