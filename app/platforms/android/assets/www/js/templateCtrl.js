@@ -38,12 +38,38 @@ function initApp($http) {
 
 /*****************************************/
  
+document.addEventListener('deviceready', onDeviceReady);
+function onDeviceReady() {
+  //var db = window.sqlitePlugin.openDatabase({name: "db_name"}); 
+var db = window.openDatabase('nutrition_db', '1.0', 'Nutrition App Diary Database', 400);  
+  function createSchema(tx){
+    tx.executeSql("CREATE TABLE IF NOT EXISTS diary( \
+      id INTEGER PRIMARY KEY AUTOINCREMENT, \
+      name TEXT, \
+      category TEXT, \
+      servings INTEGER, \
+      barcode TEXT)");
+  }
+  
+  function errorInSchema(){alert('Error creating schema');}
+  function successInSchema(){alert('Schema creation successful');}
+  db.transaction(createSchema, errorInSchema, successInSchema);
+  }
+ 
 var templateCtrl = angular.module('templateCtrl', []);
  
+/*
+ * Controller for Diary Page
+ */
 templateCtrl.controller('DiaryCtrl', function($scope) {
   $scope.helloWorld="This is coming from the Diary controller";
+  
+  
 });
 
+/*
+ * Controller for Detail Page
+ */
 templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
   $scope.barcode = $routeParams.barcode;
   $scope.foodItem = {};
@@ -61,6 +87,9 @@ templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
   console.log("ID: " + $scope.barcode);  
 });
 
+/*
+ * Controller for Add Page
+ */
 templateCtrl.controller('AddCtrl', function($scope, $http) {
   $scope.hello = "This is coming from the Add controller";
   $scope.foodData = "";  
@@ -73,14 +102,25 @@ templateCtrl.controller('AddCtrl', function($scope, $http) {
   
 });
 
+
+/*
+ * Controller for Nutrition Page
+ */
 templateCtrl.controller('NutritionCtrl', function($scope) {
   $scope.helloWorld="This is coming from the Nutrition controller";
 });
 
+/*
+ * Controller for Recent Page
+ */
 templateCtrl.controller('RecentCtrl', function($scope) {
   $scope.helloWorld="This is coming from the Recent controller";
 });
 
+
+/*
+ * Controller for Scan Page
+ */
 templateCtrl.controller('ScanCtrl', function($scope, $location, $window) {
   $scope.hello = "This is coming from the Scan controller";
   $scope.onBodyLoad = function() {
@@ -113,10 +153,17 @@ templateCtrl.controller('ScanCtrl', function($scope, $location, $window) {
           }; 
 });
 
+/*
+ * Controller for Settings Page
+ */
 templateCtrl.controller('SettingsCtrl', function($scope) {
   $scope.hello = "This is coming from the Settings controller";
 });
 
+
+/*
+ * Controller for New Item Page
+ */
 templateCtrl.controller('NewItemCtrl', function($scope, $routeParams, $http) {
   alert("Got this barcode: " + $routeParams.barcode);
   $scope.uploadNewItem = function() {
