@@ -73,24 +73,27 @@ templateCtrl.controller('DiaryCtrl', function($scope) {
 templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
   $scope.barcode = $routeParams.barcode;
   $scope.foodItem = {};
+  
+  // Get entries in local json file/database
   $http.get('db.json').success(function(data){    
     for (index in data.docs) {
-      // Finds first instance of the object with a matching barcode
-      //console.log("Looping, item: " + data.docs[index].barcode);
+      // Finds first instance of the object with a matching barcode      
       if(data.docs[index].barcode == $scope.barcode) {
-        $scope.foodItem = data.docs[index];
-        //console.log("Food item: " + $scope.foodItem);
+        $scope.foodItem = data.docs[index];        
         break;
       }
     }
   });
+  
+  
   console.log("ID: " + $scope.barcode);  
 });
 
 /*
  * Controller for Add Page
  */
-templateCtrl.controller('AddCtrl', function($scope, $http) {
+templateCtrl.controller('AddCtrl', function($scope, $http, $routeParams) {
+  $scope.type = $routeParams.type;
   $scope.hello = "This is coming from the Add controller";
   $scope.foodData = "";  
   // Get local JSON dummy data
