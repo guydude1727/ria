@@ -18,11 +18,11 @@ app.config(['$routeProvider',
         templateUrl: 'templates/diary.html',
         controller: 'DiaryCtrl'
       }).
-      when('/detail/:type/:barcode',{
+      when('/detail/:category/:barcode',{
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
       }).
-      when('/add/:type', {
+      when('/add/:category', {
         templateUrl: 'templates/add.html',
         controller: 'AddCtrl'
       }).

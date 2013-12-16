@@ -15,6 +15,17 @@ var couchDB = 'http://127.0.0.1:5984'; // CouchDB IP address; Using a local addr
 var nutritionDB = '/nutrition';
 var nutritionDoc = '/nutritionDoc';
 
+// Global vars for the local WebSQLite Database
+var db;
+var db_name = 'nutrition_db';
+var table_name = 'diary';
+
+var KEY_NAME = 'name';
+var KEY_CATEGORY = 'category';
+var KEY_SERVINGS = 'servings';
+var KEY_BARCODE = 'barcode';
+
+///////////////////////////////////////////////
 
 function initApp($http) {
   var documents;
@@ -38,17 +49,21 @@ function initApp($http) {
 
 /*****************************************/
  
+ // Create SQLite database when the device is READY FOR SOME FOOTBALL
 document.addEventListener('deviceready', onDeviceReady);
 function onDeviceReady() {
   //var db = window.sqlitePlugin.openDatabase({name: "db_name"}); 
-var db = window.openDatabase('nutrition_db', '1.0', 'Nutrition App Diary Database', 400);  
+  db = window.openDatabase(db_name, 
+    '1.0', 
+    'Nutrition App Diary Database', 
+    2*1024*1024);  
   function createSchema(tx){
-    tx.executeSql("CREATE TABLE IF NOT EXISTS diary( \
-      id INTEGER PRIMARY KEY AUTOINCREMENT, \
-      name TEXT, \
-      category TEXT, \
-      servings INTEGER, \
-      barcode TEXT)");
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ' + table_name + '( \
+      id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+      KEY_NAME + ' TEXT, ' +
+      KEY_CATEGORY + ' TEXT, ' +
+      KEY_SERVINGS + ' INTEGER, ' +
+      KEY_BARCODE + ' TEXT)');
   }
   
   function errorInSchema(){alert('Error creating schema');}
@@ -72,6 +87,8 @@ templateCtrl.controller('DiaryCtrl', function($scope) {
  */
 templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
   $scope.barcode = $routeParams.barcode;
+  $scope.category = $routeParams.category;
+  alert("Barcode: " + $scope.barcode + "\nCategory: " + $scope.category);
   $scope.foodItem = {};
   
   // Get entries in local json file/database
@@ -85,15 +102,34 @@ templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
     }
   });
   
+  // Method for adding an entry to the local Diary database
+  $scope.addEntry = function() {
+    db.transaction(addEntrySql, error, success);   
+  };
   
+  // Long SQL statement to put everything in its place! GIT 'R DUN!!!
+  var addEntrySql = function(tx) {
+     tx.executeSql('INSERT INTO ' + table_name + '(' +
+     KEY_NAME + ', ' + 
+     KEY_CATEGORY + ', ' + 
+     KEY_SERVINGS + ', ' + 
+     KEY_BARCODE + ') ' + 
+     'VALUES ("' + $scope.foodName + '", ' + 
+     '"' + $scope.category + '", ' +
+     $scope.servings + ', ' +
+     '"' + $scope.barcode + '")');     
+  };
+  // Callbacks for the SQLite DB transaction  
+  function error(){alert('Error Adding Diary Entry');}
+  function success(){alert('Added Diary Entry! \n Added: \n ' + $scope.foodItem.key +','+$scope.category+','+$scope.servings+','+$scope.barcode);}
   console.log("ID: " + $scope.barcode);  
 });
 
 /*
  * Controller for Add Page
  */
-templateCtrl.controller('AddCtrl', function($scope, $http, $routeParams) {
-  $scope.type = $routeParams.type;
+templateCtrl.controller('AddCtrl', function($scope, $http, $routeParams) {  
+  $scope.category = $routeParams.category;
   $scope.hello = "This is coming from the Add controller";
   $scope.foodData = "";  
   // Get local JSON dummy data
@@ -101,10 +137,7 @@ templateCtrl.controller('AddCtrl', function($scope, $http, $routeParams) {
     //console.log("Dummy data: " + JSON.stringify(data));
     $scope.foodData = data.docs;
     });
-  
-  
 });
-
 
 /*
  * Controller for Nutrition Page

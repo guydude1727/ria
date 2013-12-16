@@ -1,12 +1,19 @@
 <div class="row header">
 	<div class="col-md-2 col-xs-2 headerBtn"><button class="btn btn-sm"><span class="glyphicon glyphicon-remove"></span> Cancel</button></div>
 	<div class="col-md-8 col-xs-8"><h1>Detail</h1></div>
-	<div class="col-md-2 col-xs-2 headerBtn"><button class="btn btn-sm floatRight"><span class="glyphicon glyphicon-plus"></span> Add</button></div>
+	<div class="col-md-2 col-xs-2 headerBtn">
+    <button class="btn btn-sm floatRight" data-ng-click="addEntry()">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    </button>
+  </div>
 </div>
 
 <div class="row alert alert-info">
 <div class="row detail">
-	<div class="col-md-12 col-xs-12"><h3 class="marginUp">{{ foodItem.key }}</h3></div>
+	<div class="col-md-12 col-xs-12">
+    <h3 class="marginUp">{{ foodItem.key }}</h3>
+  </div>
 </div>
 
 <div class="row">
@@ -20,8 +27,15 @@
 </div>
 -->
 <div class="row">
-	<div class="col-md-8 col-xs-8"><span>Servings:</span></div>
-	<div class="col-md-4 col-xs-4"><span><input type="number" min="1" class="number floatRight" ng-init="servings=1" ng-model="servings"></span></div>
+	<div class="col-md-8 col-xs-8">
+    <span>Servings:</span>
+  </div>
+  
+	<div class="col-md-4 col-xs-4">
+    <span>
+      <input type="number" min="1" class="number floatRight" ng-init="servings=1" ng-model="servings">
+    </span>
+  </div>
 </div>
 </div><!--  end of alert-info -->
 
