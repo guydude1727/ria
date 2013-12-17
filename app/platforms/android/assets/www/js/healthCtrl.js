@@ -4,8 +4,9 @@
  *  Authors: Nathan Robinson, Matt 'Big Lew' Lewis, Stephen Brough
  *  Version: 0.0.1  
  *  Date: November 14, 2013
- *  Summary: A health app that will track your goals entered and give meal suggestions based  
- *           on your current goals
+ *  Summary: Contains global stuff for connecting with a CouchDB (WIP), and custom directives. Most
+ *           of this should probably move over to the app.js eventually
+ *           
  *
  */
  
@@ -40,18 +41,7 @@ healthCtrl.controller('healthCtrl', ['$scope', '$http', '$location', function($s
 }]);
 
 
-/*
- * A directive for displaying Row items in the Diary view 
- */
- healthCtrl.directive('diaryEntry', function(){
-  return {
-    restrict: 'A',
-    templateUrl: 'templates/layouts/diaryEntry.html', 
-    link: function(scope, elem, attrs) {
-      console.log("I see your directive and raise you fitty!");
-    }
-  }
- })
+
 
 
 function initApp($http) {

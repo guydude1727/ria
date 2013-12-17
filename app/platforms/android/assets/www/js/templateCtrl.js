@@ -1,10 +1,10 @@
 /*
  *  RIA Group Project: Nutrition Goals App
- *  
+ *  Filename: templateCtrl.js
  *  Authors: Nathan Robinson, Matt 'Big Lew' Lewis, Stephen Brough
  *  Version: 0.0.1  
  *  Date: November 16, 2013
- *  Summary: The main app module with app configurations.
+ *  Summary: Controllers for the templates
  *
  */
 
@@ -57,7 +57,7 @@ function onDeviceReady() {
     '1.0', 
     'Nutrition App Diary Database', 
     2*1024*1024);  
-  function createSchema(tx){
+  var createSchema = function(tx){
     tx.executeSql('CREATE TABLE IF NOT EXISTS ' + table_name + '( \
       id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
       KEY_NAME + ' TEXT, ' +
@@ -67,7 +67,7 @@ function onDeviceReady() {
   }
   
   function errorInSchema(){alert('Error creating schema');}
-  function successInSchema(){alert('Schema creation successful');}
+  function successInSchema(){/*alert('Schema creation successful');*/}
   db.transaction(createSchema, errorInSchema, successInSchema);
   }
  
@@ -76,11 +76,55 @@ var templateCtrl = angular.module('templateCtrl', []);
 /*
  * Controller for Diary Page
  */
-templateCtrl.controller('DiaryCtrl', function($scope) {
-  $scope.helloWorld="This is coming from the Diary controller";
+templateCtrl.controller('DiaryCtrl', function($scope, $q, $rootScope) {  
+  $scope.item1 = { name:'test thing', servings:'3', calories:'9000' };
   
+  //var deferred = $q.defer();
+ //var promise = deferred.promise;
+  //promise = promise.then();
+  //deferred.resolve(doTheThing);
   
-});
+  //function doTheThing() { }
+  
+  $scope.breakfastEntries = [];
+  $scope.lunchEntries = [];
+  $scope.dinnerEntries = [];
+  
+  function getDiaryEntries(tx) {
+    tx.executeSql('SELECT * FROM ' + table_name, [], function (tx, results) {
+      var len = results.rows.length, i;
+      for (i = 0; i < len; i++) {    
+         switch (results.rows.item(i).category) {
+           case "breakfast":
+             $scope.breakfastEntries.push(results.rows.item(i));
+             alert("Pushing " + JSON.stringify(results.rows.item(i)));
+           break;
+           case "lunch":
+             $scope.lunchEntries.push(results.rows.item(i));
+           break;
+           case "dinner":
+             $scope.dinnerEntries.push(results.rows.item(i));
+           break;
+         }
+       // alert(JSON.stringify(results.rows.item(i)));       
+      }
+    });
+  }
+  function error(){alert('Error getting diary entries');}
+  function success(){/*alert('Got diary entries!\n');*/}  
+  db.transaction(getDiaryEntries, error, success);
+}).directive('diaryEntry', function(){
+  return {
+    restrict: 'A',
+    templateUrl: 'templates/layouts/diaryEntry.html', 
+    link: function(scope, elem, attrs) {
+      //console.log("I see your directive and raise you fitty!");
+    },
+    scope: {
+      dataEntry: '='
+    }
+  }
+ });
 
 /*
  * Controller for Detail Page
@@ -88,7 +132,7 @@ templateCtrl.controller('DiaryCtrl', function($scope) {
 templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
   $scope.barcode = $routeParams.barcode;
   $scope.category = $routeParams.category;
-  alert("Barcode: " + $scope.barcode + "\nCategory: " + $scope.category);
+ // alert("Barcode: " + $scope.barcode + "\nCategory: " + $scope.category);
   $scope.foodItem = {};
   
   // Get entries in local json file/database
@@ -114,7 +158,7 @@ templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
      KEY_CATEGORY + ', ' + 
      KEY_SERVINGS + ', ' + 
      KEY_BARCODE + ') ' + 
-     'VALUES ("' + $scope.foodName + '", ' + 
+     'VALUES ("' + $scope.foodItem.key + '", ' + 
      '"' + $scope.category + '", ' +
      $scope.servings + ', ' +
      '"' + $scope.barcode + '")');     
@@ -129,8 +173,7 @@ templateCtrl.controller('DetailCtrl', function($scope, $http, $routeParams) {
  * Controller for Add Page
  */
 templateCtrl.controller('AddCtrl', function($scope, $http, $routeParams) {  
-  $scope.category = $routeParams.category;
-  $scope.hello = "This is coming from the Add controller";
+  $scope.category = $routeParams.category;  
   $scope.foodData = "";  
   // Get local JSON dummy data
   $http.get('db.json').success(function(data){

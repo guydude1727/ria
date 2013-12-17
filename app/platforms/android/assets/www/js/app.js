@@ -1,6 +1,6 @@
 /*
  *  RIA Group Project: Nutrition Goals App
- *  
+ *  Filename: app.js
  *  Authors: Nathan Robinson, Matt 'Big Lew' Lewis, Stephen Brough
  *  Version: 0.0.1  
  *  Date: November 16, 2013
